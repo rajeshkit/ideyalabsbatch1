@@ -1,0 +1,673 @@
+class HelloWorld{
+	public static void main(String[] args){
+		System.out.println("Hello World")
+	}
+}
+
+Java IDE's	
+	Eclipse
+	STS
+	Intellj
+	Netbeans
+	Jcreator
+
+				Datatype
+
+	Primitive Type 				Non Primitive type
+	byte - 1 byte - 8 bits				String
+	short - 2 byte- 16 bits				Array
+	int - 4 byte - 32 bits
+	long -8 byte - 64 bits
+	float - 4 byte - 32 bits
+	double -8 byte - 64 bits
+	boolean - 1 bit
+	char - 2 bytes
+
+Control staetements:
+	1. conditional control statement
+	2. Unconditional control statements
+Arrays:-
+	It is a collection similar type of values
+	Array - continous memory
+	Array size fixed
+	index based access
+	int a;
+	a=10;
+	a=57;
+	s.o.p(a);
+	int[] a=new int[5]; 5*32
+	a[0]
+Ways to create an array:-
+	Array Declaration:
+		datatype[] arrayrefname=new datatype[size];
+		byte[] b=new byte[5];
+		float[] f=new float[5];
+		String[] str=new String[5];
+Array manipulation:-
+	sort
+	rotate
+	shift
+	find an element
+	copy
+	add an element
+	reversing
+
+	Arrays
+
+Functions or methods:-
+	* used to perform a task or logic
+	* functions or methods also called as subprograms
+	* Readability, Reusability
+	Syntax:
+	accessmodifier nonaccessmodifer returntype methodName(args){
+		----;
+		----;
+	}
+	Eg:-
+	 public static void main(String[] args) {
+	 	
+	 }
+	
+	* need to call the method explicitly
+	method definition or 
+		void add(){
+			
+		}
+	method abstraction
+		void add();
+
+	method call
+		add();	
+Function overloading:-
+	function with same name but different arg are called AS FUNCTION
+	overload
+
+String:-
+	It's a collections characters
+	4 ways to manipluate string
+	==========================
+	1. string literal(Immutable)
+		String s = "Hyderabad"
+	2. string object(Immutable)
+		String s = new String("Hyderabad");
+	3. StringBuffer(mutable)
+		StringBuffer s = new StringBuffer("Hyderabad");
+	4. StringBuilder(mutable)
+		StringBuilder s = new StringBuilder("Hyderabad");
+
+
+
+Object Oriented Programming:-
+	Object
+	class
+	Encapsulation	
+		* Wrapping up data member with function is called 
+		  Encapuslation
+		* Encapsulation we are achiveing through the class
+		* Hide the data members using access modifiers
+			public, private, protected , default
+		class Manager{ // POJO class - Plain Old Java Object
+			private int managerId;
+			private String managerName;	
+			public void setManagerId(int id){
+				if(id<100){
+					managerId=0;
+				}
+				managerId=id;
+			}
+			public int getManagerId(){
+				return managerId;
+			}
+		}
+		
+	Inhritance
+		Inheriting members from one class to the other class
+		is called inheritance
+		Types of inheritance
+		1. IS-A Inheritance(extends):-
+			1.1 single inheritance
+			1.2 Multilevel Inheritance
+			1.3 Hierachial Inheritance
+			1.4 Multiple Inheritance(not possible)
+			1.5 Hybrid Inheritance	
+		2. Has-a Inheritance(Association)
+			2.1 Aggregation - weak association
+				Car has-a Horn
+				loosly coupled 
+			2.2 Composition	- Strong assocation
+				Human has-a heart
+				Car has-a Engine
+				Laptop has-a Processor
+				tightly coupled
+	Polymorphsim:-
+		Poly - many 
+		Morphsim -  forms
+				
+		sendGift(Courier){
+			implementation
+		}	
+		sendGift(Postal){
+			implementation
+		}
+		sendGift(Friends){
+			implementation
+		}
+		sendGift(self){
+			implemenation
+		}
+				
+
+
+
+
+	abstraction
+	
+
+
+
+	Object
+		properties	
+		Behaviour
+	ICICI Bank
+		class contains members
+			variable - static or instance
+			methods
+Class:-
+	1. Userdefined class 
+	2. Predefined class
+		set of jar -> set of  packages
+		-> classes and interfaces(compiled .class files)
+					-> members
+
+	created one class - Employee
+		
+	create a two classes
+		Bank - members
+		Loan - members
+	Inheritance:-
+		1. IS-A Inheritance - extends
+		2. Has-A Inheritance - creating an object of one class
+				into another class
+
+
+		Types of variable:-
+			1. local variable
+			   a varibale declared inside the function or
+			   block
+			2. instance variable
+			   a variable declared inside the class outside 
+			   of any method it is called as instance variable
+			3. static variable
+			   a variable declared inside the class outside 
+			   of any method with static keyword
+
+Java Naming Conventions:-
+	1. class name
+		* should be a noun
+		* one word - starting character should be upper case
+		* More than one word - all words starting letter 
+				       must be in cpaital case	
+	2. method name
+		* should be a verb
+		* one word - all letters must be lowercase followed by()
+		* More than one word - first word all letter lower
+				       the second word onwards each 			word starting character must upper case()
+	3. variable name
+		* one word - all letters must be lowercase
+		* More than one word - first word all letter lower
+				       the second word onwards each 						word starting character must upper case
+		* If it is a constant all letters must be in uppercase
+	4. interface
+	5. package - all letters must be lower case 
+
+class members:-
+		member variable
+		member function
+		constructor - is special member function
+		static block
+	constructor:-
+		is special member function
+		constructor does not returns a value
+		constructor name should be same as your classname
+		
+
+		public class Customer{
+			int customerId;//member variable
+			String name;//member variable
+			String phone;//member variable
+			Date dob;//member variable
+			public void applyLoan(){//member function
+			
+			}
+			public void editProfile(){//member function
+			
+			}
+			
+		}
+		int cust;
+		Customer cust=new Customer();// customer object
+		
+		customer
+			-customerId
+			-name
+			-phone
+			-dob
+			-address
+			-applyingLoan()
+			-editProfile()
+			-doTransaction()
+		account
+			-accountNumber
+			-ifscCode
+			-balance
+			-withdrawl()
+			-deposit()
+		transaction
+		ledger
+		wallets
+		loan
+		emi
+abstraction:-
+	giving an essential information without giving detail information
+	show only essential information and hide detail information
+	1. abstract class
+	2. interface
+casting:-
+	1. Type casting
+		converting one primitive type to another type
+			byte a=89;
+			int k=a; // type casting
+	2. Object casting
+				
+final keyword:-
+	final - before variable declaration
+			class Test{
+				final int a=46;
+			}
+	        before method name
+			final - it stops overriding
+		before the class
+			final
+
+
+		abstract -> has-a inheritance not possible
+			    is-a inheritance works
+		final -> has-a inheritance will works
+			 is-a inheritance will not works
+Access Modifiers:-
+	-> visibility
+	-> class members visibility
+	private
+	default 
+	protected
+	public
+Non Access Modifiers:-
+	It changes the default behaviour
+	static
+	final
+	synchronized
+	abstract
+	etc.,
+		class Student{
+			public final static int studentId;
+				//static varible, method area
+			public final void display(){
+			
+			}
+			public abstract void show();
+		}
+
+packages:-
+		-> to organize the source code
+		-> Managaing the source code is easy
+		-> naming conflict
+		-> packages involved visibility
+		Sms -> amazon -->   www.amazon.in
+			src->
+			in.amazon.inventory
+				Inventory.java
+				StockDetails.java
+			in.amazon.product
+				ElecetronicProduct.java
+				HouseHoldProduct.java
+				ClothingProduct.java
+			in.amazon.delivery
+				CourierPartner.java
+			in.amazon.payment
+				Billing.java
+				CreditCard.java
+				Upi.java
+				AmazonPay.java
+			in.amazon.customer
+				Customer.java
+					
+
+	private - members can be accessed only inside the class
+		  other class from same package - No
+		  other class from different package - No
+
+	default - members can be accessed inside the class
+		  other class from same package - Yes
+		  other class from different package - No
+	
+	protected - members can be accessed inside the class
+		  other class from same package - Yes
+ 		  other class if it is subclasses from different package - 			Yes
+		  other class from different package - No
+	public - 
+
+
+
+Both access modifiers and non accessmodifers
+	before class
+	before method
+	before variable
+		
+	before constructor
+
+Exception Handling:-
+	* It abnornal condition created during the program in execution
+	* If exception gets created during runtime your program terminated
+	  ubrubtly
+	* As a programmer u should anticipate there is an exception
+	  then u need to handle the exception. so that ur program
+	  will not terminate abrubtly. 
+	How do u handle the exception in java:-
+	 1. try catch -  handling 
+		try{
+			the code or line of code possible to create
+			an exception keep it inside the try
+		}
+		catch(typeofexception e){
+			handling the exception code 
+		}
+	 2. throws - propogating or delegating or passing
+	
+		
+	syntax error
+	exception
+	error
+
+	checkedException - if checked is not handled with
+			   with try catch then u need to expliclitly 
+			   propogate exception using throws 
+ 
+			  
+	unchecked exception -if unchecked is not handled with
+			   with try catch then jvm automatically jvm 			   internally propogate the exception 
+			  
+Custom Exception or User defined exception:-
+===========================================
+
+		Banking Application
+			user -> enter account no:6778 - 
+AccountDoesNotException
+					2000    20000- InsffientFundExc	
+
+Array:-
+	group of same elements refered by single reference 
+	continous memory allocation
+	Fixed in size
+	Random in access
+	
+	
+	
+Collection:- java.util package 
+	Collection is a framework - 
+	API - It contains  class or interface method  
+	Group of object with single collection reference variable
+	dynamic in size
+	Each collection classes are backed by one datastructure
+	of the below datastructure
+			1. Array 
+			2. LinkedList
+			3. Queue / Stack
+			4. Heap
+			5. Tree - Binary search tree, 
+			6. Map
+			7. Hashing
+			8. sort 
+	
+	
+Wrapper class:-
+	Non primitive version primitive type
+	Byte
+	Short
+	Integer
+	Long
+	Float
+	Double
+	Boolean
+	Character 
+	
+
+preserved Insertion Order or unoreded 
+accepts duplicate or unique 
+accepts a null or not
+
+Set(I)
+	HashSet - Unordered
+		- no duplicate accepeted
+		- accepts only one null
+	LinkedHashSet 
+		- Ordered
+		- no duplicate accepeted
+		- accepts only one null
+
+	TreeSet - UnOrdered(Sorted)
+		- no duplicate accepeted
+		- Not even a single null is accepted
+
+Map<Key,Value>:-
+	
+		HashMap
+		LinkedHashMap
+		TreeMap
+
+java.io package:-
+		
+	
+2 ways can create thread
+	1. extending Thread class
+	2. Implementing Runnable interface
+
+	Thread is nothing but a object in java
+	A class extends an Thread class - if i create an
+	object for that class it is called as thread object
+
+Sychronizntion
+
+java.util.concurrent
+
+Executor - is an interface - it seperate thread creation and task definining
+
+ExecutorService - extends Executor
+Executors - it is a class factory methods 
+
+		
+
+
+product.txt
+
+	100,"Tv",10000,"LG",
+	101,"Refrigrator",34000,"Whirlpool",
+	102,"Laptop",100000,"Apple",
+	
+before 1.8
+	java.util.Date
+	java.sql.Date
+	SimpleDateFormat
+After 1.8 - java.time
+	LocalDate - date alone
+	LocalTime - time alone
+	LocalDateTime - datetime
+	DateTimeFormatter - coverts string date time into local date/time
+			    coverts local date time into String date/time
+
+Java 8 Features:-
+	default method
+	static method
+	functional interface
+		A interface has only one abstract method is called
+		as functional interface
+		A Functional interface can have zero or more
+		implmented method
+		SAM interface- single abstract method interface
+		
+		user defined interface
+			Payment	
+		predefined function interface
+			Runnable
+			Comparable
+			Comparator
+			Callable
+			------------
+			Predicate
+			Supplier
+			Consumer
+			Function
+	lamda expression
+		int c=a+68+g;//expression
+		It is an implementation of abstract method from fuctional
+		interface
+	Rules for Lambda expression
+	1. Does not take access modifier and non access modifier
+	2. Does not take return type	
+	3. Does not takes method name
+	4. should have only the argument
+	5. After the argument place the lambda operator
+	6. If the lamda body has only one statement u can remove {}
+	   if that one statement is an only return statement
+	   u can remove keyword also
+	
+	7. Lamda does not takes annotation
+	8. If the lamda expression takes argument then u can remove
+	   argument type
+	9. If the lamda has one arg then remove arg ()
+
+	Stream API 
+		Stream API is a way to express and process collections of 		objects. Enable us to perform operations like filtering, 		mapping,reducing and sorting.
+		1. Simple Stream
+		2. Parellel Stream
+		
+	method reference
+		
+	Home > Java 8 >
+Method Reference(::) Java 8
+Java 8Core Javajavaby devs5003 - April 15, 20212
+Last Updated on November 14th, 2023
+
+Method Reference(::) Java 8Method Reference is a wonderful feature introduced in Java 8.  Apart from taking advantage of functional programming, one of the biggest advantages in using a Lambda expression is to minimize the lines of code. Similarly, Method Reference(::) Java 8 also minimizes lines of code even more than Lambda. However, we use both of them in the presence of functional interfaces only. Moreover, It is also a concise and simpler form of lambda expression. In this article, we will also learn how to change a Lambda expression into a method reference. Let’s start discussing about ‘Method Reference(::) Java 8’ and it’s related concepts.​
+
+Table of Contents
+What is Method Reference(::)?
+Syntax to write Method References
+Examples of each Type of Method Reference(::) Java 8 
+Method reference to a static method of a class :
+Method reference to an Instance method of a class :
+Constructor Reference 
+Example of Reference to an Instance Method of an Arbitrary Object of a Particular Type
+Difference between reference to an Instance method of a particular object & an arbitrary Object of a given type 
+Reference to super class & child class method using super & this keyword
+FAQs
+What is the method reference in Java 8?
+What is the benefit of using method reference in Java 8?
+What is difference between lambda expression and method reference?
+What are three ways of implementing method reference?
+Why do we need method references in Java?
+When should we use a method reference instead of a lambda expression?
+Are method references faster?
+ADVERTISEMENT
+
+Life Hacks Tricks Battery Charger 
+
+
+
+
+00:08/03:57
+
+
+What is Method Reference(::)?
+As we have seen in Lambda expression topic that we use lambda expressions to implement Functional interfaces with minimum lines of code and even to get better code readability. Similarly, we can use Method Reference(::) Java 8 to implement Functional interfaces with even lesser code again than lambda expressions and this time we get the benefit of code re-usability as well, because we don’t provide an implementation for functional interface. Instead, we provide reference to already existing method (with similar argument types) to simplify the implementation of the functional interface using a double colon (::) operator. This process of providing reference to pre-existing method is called Method reference.
+	java.time API		
+	
+	* If the lamda expression doing nothing but it calling only
+	  existing method then in the place of lambda u can write 
+	  Method Reference
+
+Regex:-(Regular Expression or Regex):-
+	it will pattern or format is present in the given string
+	java.util.regex
+		  - Pattern
+		  - Matcher
+		   
+Java Generics:-
+	Java Generics allows us to create a single class, interface, and 	method that can be used with different types of data (objects).	
+	
+	Generics does not work with primitive types (int, float, char, 	etc).
+
+	Wild card in java generics(?)
+		? - any type
+	1. Bounded wildcard type - upper bound and lower bound
+	2. unbounded wildcard type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
