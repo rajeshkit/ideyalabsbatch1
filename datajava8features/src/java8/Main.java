@@ -6,9 +6,11 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-
-public class Main implements Payment,Payment1{
-    public static void main(String[] args) {
+@MyAnnotation(value = "ddd",size = 567)
+public class Main implements Payment{
+    @MyAnnotation(value = "56789",size = 79)
+    int total;
+    public static void main(@MyAnnotation(value = "fgfg",size=577)  String[] args) {
         Runnable r;
         Comparable com;
         Comparator c;
@@ -26,13 +28,10 @@ public class Main implements Payment,Payment1{
 
     @Override
     public int transaction() {
+
         return 0;
     }
 
-    @Override
-    public void bankPayment() {
-        Payment.super.bankPayment();
-    }
 
 
 }

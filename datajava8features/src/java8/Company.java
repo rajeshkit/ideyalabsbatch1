@@ -1,5 +1,5 @@
 package java8;
-
+@FunctionalInterface
 public interface Company {
     public float display(int a);
     default public void add(){

@@ -1,5 +1,5 @@
 package java8;
-@FunctionalInterface
+@MyAnnotation(value = "", size = 0)
 public interface Payment {
     int transaction();
 
