@@ -611,6 +611,315 @@ Java Generics:-
 	1. Bounded wildcard type - upper bound and lower bound
 	2. unbounded wildcard type
 
+Java Annotation:-
+	Java annotations are metadata (data about data) for our program 	source code.
+
+	They provide additional information about the program to the 			compiler but are not part of the program itself. These annotations 	do not affect the execution of the compiled program.
+
+	Annotations start with @
+	 Its syntax is:@Annotation
+	
+	public class Demo implements Runnable{
+		@Override    ----> take this annotation by the compiler
+				   will base class with the child class
+				   
+		public void run(){
+	
+		}
+	}
+	@FunctionalInterface
+	interface Pred<T>{
+		boolean test(T t);
+	}	
+
+	interface Serializable{
+		
+	}
+
+	annotations are used inside source code(your program)
+	
+	before class
+	before fields
+	before method
+	before interface
+	before constructor
+
+Use of Annotations
+Compiler instructions - Annotations can be used for giving instructions to the compiler, detect errors or suppress warnings. The built-in annotations @Deprecated, @Override,@SuppressWarnings are used for these purposes.
+Compile-time instructions - Compile-time instructions provided by these annotations help the software build tools to generate code, XML files and many more.
+Runtime instructions - Some annotations can be defined to give instructions to the program at runtime. These annotations are accessed using Java Reflection.
+
+SOLID Design Principles:-
+	* Maintainable
+	* Less bug
+	* Loosly coupled application
+	* Testable
+	* Flexible
+	S - Single Responsibility Principle
+		package
+		class / interface
+		methods
+		
+	O - Open closed principle
+		Open for extension
+		closed for Modification
+			
+	L - Liskov substitution principle
+		Every subclass should be subsititutable by parent class
+		Every subclass should be replaced by parent class
+		without the behaviuor
+		
+	I - Interface Segregation Principle
+		interface Executor{
+			execute();
+		}
+		interface ExecutorService extends Executor{
+		
+		}
+
+
+		interface Bird{
+			public void walk();
+		}
+		interface FlyingBirds extends Bird{
+			public void fly();
+		}
+		class Pegieon implements FlyingBird{
+			public void fly(){}	
+			public void walk(){}
+		}
+		class Penguin implements Bird{
+			public void walk(){}
+		}
+
+	D - Dependency Inversion Principle
+		If two class objects are in the dependency. The dependecy
+		should depends on abstraction not on implementation
+		
+		interface Bird{
+			public void walk();
+		}
+		class Penguin implements Bird{
+			public void walk(){}
+		}
+		
+		class Main{
+			Bird bird=new Penguin();
+			
+			public void display(){	
+				
+				bird.walk();
+			}
+		}
+		interface Connection{
+			public Connection getConnection(
+				String url,String username,String pass){
+					
+			}
+		}
+
+		public class SqlConnection implements Connection{
+			public Connection getConnection(
+				String url,String username,String pass){
+					
+			}
+		}
+		public class PostgresConnection implements Connection{
+			public Connection getConnection(
+				String url,String username,String pass){
+					
+			}
+		}
+		public class OracleConnection implements Connection{
+			public Connection getConnection(
+				String url,String username,String pass){
+					
+			}
+		}
+
+		public class ConnectDB{
+			Connection con=new OracleConnection();
+			con.getConnection(url,username,pass);
+		}
+
+SQL:-
+	DDL(Data Definition Language)
+		CREATE	
+		ALTER
+		DROP
+		RENAME
+		DESC | SHOW
+		TRUNCATE
+	DML(Data manuplation language)
+		INSERT
+		DELETE
+		UPDATE 
+		SELECT	
+	DCL(Data Control language)
+		GRANT 
+		REVOKE
+	TCL(Transaction Control Language)
+		commit 
+		rollback
+		savepoint
+SQL Clauses:-
+	Clauses -  used to filter or used to select something from
+		   the group.
+
+		use clause - 63 db. use ideyalabs	
+		From clause  - 2 tables - used to filter the table
+		Where clause - filter and select row or rows from many
+				rows
+		select clause	- filter and select the column from many 
+				  columns
+		group by clause - filter and select and group based on 				  column
+		having clause  - user filter the row after applying 
+				group by results
+		order by clause - sort asc / desc
+		on clause 
+		join clause
+Views:-
+	View is logical or virtual tables
+	view are created from physical table
+
+	syntax:-
+		CREATE VIEW viewname AS SELECT query
+		
+
+Annotation,  reflection, SOLID Design Principles will be covered along with SQL.
+
+JDBC:-
+	Java database connectivity
+	Collection API - it contains set of interface, classes and methods
+			to manage the group of object
+	Stream API - 
+	Exception API - 	
+
+		Java -----------------> database
+		JDBC API - java.sql, javax.sql
+			
+	JDBC API - 
+		Connection(I)
+		DriverManager(C) - 
+			static method getConnection(url,username,password)
+		Statement(I) - execute your query, static query
+		PreparedStatement(I) - execute the query,dynamic query
+		CallableStatement(I) - execute an stored procedure 
+				and funtions
+			
+			boolean execute(); -> DDL and DML
+			int executeUpdate(); // write - INSERT,DELETE, 					UPDATE
+			ResultSet executeQuery(); //read - SELECT
+
+		ResultSet(I) - when retrive data from db to java
+				then the result of select query will
+				be stored on resultset
+
+Stepts to u need to perform JDBC:-
+	Prerequitse:-
+			download the jdbc driver and extract to a folder
+			after extracting take the file and add it to the
+			project buid path
+
+	Step 1: Load the Driver.class
+	Step 2: Create a connection object
+			DriverManager.getConnection(url,username,password)
+
+
+
+
+Movie
+	-movieId
+	-movieName
+	-relaseDate
+Service
+	public boolean addMovie(Movie movie)
+	public Movie deleteMovieById(int movieId)
+	public Movie getMovieById(int movieId)
+	public List<Movie> getAllMovies()
+	pulic Movie updateMovieById(int movieId)
+Dao
+
+	public boolean addMovie(Movie movie)
+	public Movie deleteMovieById(int movieId)
+	public Movie getMovieById(int movieId)
+	public List<Movie> getAllMovies()
+	pulic Movie updateMovieById(int movieId)
+
+JPA:-	
+ 	It's a standard specification helps you objects can persisted(db)
+			
+	Without implementation. its a instruction what to do
+		makeCoffee();
+
+	Implementation:-
+		makeCoffee(){
+			take coffe powder
+			take milk and sugar
+			boil it
+			serve it glass
+		}
+
+	JPA:-(Java Persistence API) - Jakarta Persistence API
+			EntityManager(I) - db config
+			Entity(I) - connection to the db
+			save(Object obj) - INSERT
+			get(id) - SELECT
+			delete(id) - DELETE
+		
+		JPA implementation(ORM)-Object Relational Mapping
+			Hibernate(ORM tool) 	
+				interface extends JpaInterface
+				classes implements Jpainterface
+			topLink
+			iBatis
+			
+Hibernate ORM API:-
+		Configuration(C)
+		SessionFactory(I) -> extends EntityManager(I)	
+		Session(I) extends Entity
+		Transaction(I) 
+		Query(I)   
+		Criteria(I)
+		
+JDBC API - jdk
+	
+mysql DRIVER - mysql-connector-j.jar
+
+
+		Jpa - jakarata Persistence api
+		hibernate orm 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
