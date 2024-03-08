@@ -105,12 +105,13 @@ public class Main {
         Employee e=new Employee();
         e.setEmployeeName("xyz");
         e.setEmployeeSalary(20000);
+
         Project p=new Project();
         p.setProjectName("iciciapp");
         p.setReleaseDate(new Date());
         p.setEmployee(e);
+        e.setProject(p);
         session.persist(e);//INSERT
-        session.persist(p);
         session.getTransaction().commit();
         session.close();
         sessionFactory.close();

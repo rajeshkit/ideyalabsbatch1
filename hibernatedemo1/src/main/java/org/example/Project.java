@@ -11,8 +11,10 @@ public class Project {
     private int projectId;
     private String projectName;
     private Date releaseDate;
-    @OneToOne //One project map to a many employees
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "project" )
+    @JoinColumn(name = "emp_id_fk")
     private Employee employee;
+
     public Employee getEmployee() {
         return employee;
     }
@@ -20,8 +22,6 @@ public class Project {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
-
-
 
     public int getProjectId() {
         return projectId;

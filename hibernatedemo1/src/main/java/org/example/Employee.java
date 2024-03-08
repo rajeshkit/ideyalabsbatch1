@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Employee {
@@ -13,6 +10,17 @@ public class Employee {
 
     private String employeeName;
     private int employeeSalary;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id_fk")
+    private Project project;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
     public int getEmployeeId() {
         return employeeId;

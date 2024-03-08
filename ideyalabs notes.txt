@@ -890,53 +890,92 @@ mysql DRIVER - mysql-connector-j.jar
 		Jpa - jakarata Persistence api
 		hibernate orm 
 
+Maven:-
+	standard folder structure
+	managing the dependencies
+	pom.xml -> maven config 
+		Artifact-ID
+		Group-ID
+	SQL:-
+		tablename and columnanme
+		select e_id,employeename,employeename from employee_info;
+	JPA-JPQL - HQL:-		
+		entityname and variablename
+		select employeeId,employeeName,employeeSalary from 				employee_info;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Java Web Application:-
+	- U need a server
+	- j2ee - java servlet / jsp -  java.servlet-api.jar file
 		
+	Servlet:-
+		It is a java program. Any java which extends an class 		called servlet HttpServlet 
+		
+		Java program - can it handle HttpRequest and HttpResponse		
+		class Demo extends HttpServlet{
+			doGet(){
+			}
+			doPost(){
+			}
+			
+		}
+
+		jakarta.sevlet-api
+			Servlet(I)
+			   |	implements
+			GenericServlet(AC)
+			   | 	extends
+			HttpServlet(AC)
+			   | 	extends
+			YourServlet
 
 
 
+Servlet -> Resource Internal Communication
 
+	DisptacherServlet - forward / include
+	
+	sendRedirect("url")
 
+Maven:-
+	Is a build tool
+	Project depedency management tool
+	it's gives u standard project structure
+	The dependecy will managed by maven
+	project document the project
+	u can build of your project - jar / war
 
+	Maven has a lifecycle
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		clean
+			- pre clean
+			- clean
+			- post clean
+		build  
+			validate - validate the project is correct and all 				   necessary information is available
+			compile -  compile the source code of the project
+			test - 	   test the compiled source code using a 				   suitable unit testing framework. These                                    tests should not require the code be 			           packaged or deployed
+			package -  take the compiled code and package it 				   in its distributable format, such as a 				   JAR / WAR. project target folder
+			verify -   run any checks on results of 			           integration tests to ensure quality 				   criteria are met
+			install -  install the package into the local 				   repository, for use as a dependency in 				   other projects locally
+			deploy -   done in the build environment, copies 				   the final package to the remote 				   repository for sharing with other 				   developers and projects.
+		
+		site	
+			- pre site
+			- site
+			- post site
+		Phases	 - 	Goal 		- Plugin
+		validate	validate	maven-validate-plugin
+		compile		compile		maven-compile-plugin
+		test		test		maven-test-plugin
+		package		package		maven-package-plugin
+		verify
+		install		install		maven-install-plugin
+		deploy 		deploy		maven-deploye-plugin
+	
+	Maven
+         	- pom.xml
+		- Remote repository - www.mvnrepository.com
+		- local repository - .m2 folder 
 
 
 
