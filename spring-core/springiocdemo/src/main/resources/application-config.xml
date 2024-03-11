@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <!-- <bean id="p1" class="org.example.Player">
+                <constructor-arg name="playerId" value="2000"></constructor-arg>
+                <constructor-arg name="playerName" value="Dhoni"></constructor-arg>
+        </bean>
+        <bean id="p2" class="org.example.Player">
+                <constructor-arg name="playerId" value="3000"></constructor-arg>
+                <constructor-arg name="playerName" value="Virat"></constructor-arg>
+                <constructor-arg name="teamName" value="India"></constructor-arg>
+        </bean>
+        <bean id="p3" class="org.example.Player">
+                <property name="playerId" value="4000"></property>
+                <property name="playerName" value="Sachin"></property>
+                <property name="teamName" value="India"></property>
+        </bean>-->
+        <bean id="p4" class="org.example.Player1" name="team1" autowire="byType" ></bean>
+        <bean id="p2" class="org.example.Player2" name="team1" autowire="byType" ></bean>
+        <bean  class="org.example.Team">
+            <qualifier value="team1"></qualifier>
+        </bean>
+        <bean  class="org.example.Team">
+            <qualifier value="team2"></qualifier>
+        </bean>
+
+        <bean  class="org.example.TeamManagement" ></bean>
+
+       <!-- <bean id="t2" class="org.example.Team">
+                <property name="player" ref="p3"></property>
+        </bean>-->
+</beans>
