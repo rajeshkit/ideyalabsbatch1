@@ -2,7 +2,7 @@ package org.btrs.dao;
 
 import java.util.List;
 
-import org.btrs.model.Booking;
+import org.btrs.entity.Booking;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -17,12 +17,12 @@ public class BookingDaoImpl implements BookingDao{
         SessionFactory sessionFactory=configuration.buildSessionFactory(); //3 connections
         Session session=sessionFactory.openSession();
         session.beginTransaction();
-         session.persist(booking);
+        session.persist(booking);
         session.getTransaction().commit();
         session.close();
         sessionFactory.close();
     
-		return null;
+		return booking;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +9,12 @@
 </head>
 <body>
 	<h1>Booking page</h1>
-	<form action="book" method="post">
-		<input type="text" name="from" placeholder="Enter the source"><br><br> 
-		<input type="text" name="to" placeholder="Enter the destination"><br><br> 
-		<input type="email" name="email" placeholder="Enter the Email"><br><br> 
-		<input type="date" name="journeydate" placeholder="Select jpurney date"><br><br> 
+	<form:form action="book" method="post" modelAttribute="book">
+		<form:input type="text" path="source" placeholder="Enter the source"></form:input><br><br> 
+		<form:input type="text" path="destination" placeholder="Enter the destination"></form:input><br><br> 
+		<form:input type="email" path="email" placeholder="Enter the Email"></form:input><br><br> 
+		<form:input type="date" path="date" placeholder="Select jpurney date"></form:input><br><br> 
 		<input type="submit" value="Book">
-	</form>
+	</form:form>
 </body>
 </html>

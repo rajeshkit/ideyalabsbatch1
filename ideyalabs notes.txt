@@ -977,40 +977,160 @@ Maven:-
 		- Remote repository - www.mvnrepository.com
 		- local repository - .m2 folder 
 
+	ApplicationContext(I)  - IOC container
+			ClasspathXmlApplicationContext(c)
+			inte
+			FileSystemXmlApplicatioContext(c)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	Bean Configuration	+	Bean Definitions
 		
+	Xml				Xml
+	Xml				Annotation
+	Java config(Annotation) + 	Annotation
+
+Bean Definition annotations
+	@Component - used at the top of the class
+		   - Then that class can be created as bean
+	             by the IOC container
+	@Component
+	class Player{
+	}
+	@Component
+	class Team{
+	}
+	class Management{
+	}
+Spring MVC:-
+	1. create a maven web project
+	2. add dependency - 
+			spring-context				
+			spring-mvc
+			jakarta.servlet-api
+	3. Configure DispatcherServlet in the web.xml
+	4. need to define an bean configuration file
+		yourdispatcherservletname-servlet.xml
+	5. create a controller - annotate with @Component 
+		or child annotation @Controller
+	6. RequestMapping method
+	7. Configure the view resolver 
+			<bean id="viewResolver1" 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/pages/"></property>
+			<property name="suffix" value=".jsp"></property>
+		</bean>
+	8. Run the application
+
+	
+Spring mvc
+	1. web.xml --> spring bean config in xml -> some bean defintion
+						    xml
+						    anntation
+
+	2. web.xml in java --> spring config in java --> annotation
+							@Component
+							@Controller
+							@Bean
+
+	public interface BookingService{
+		public Booking createBooking(Booking booking);
+		public Booking getBookingById(int bookId);
+		public List<Booking> getBookingById(int bookId);
+		
+	}
+	public interface BookingDao{
+		public Booking createBooking(Booking booking);
+		public Booking getBookingById(int bookId);
+		public List<Booking> getBookingById(int bookId);
+		
+	}
+	
+Lombok framework:-
+	It avoid biolar plate code
+	getter / setter, constructor,toString,equals,hashCode
+	u need to install framework into the IDE (one time)
+	Add an lombok dependecy into ur project and use(every project)
+		
+	1. install the lombok in the sts
+
+	TRACE--> DEBUG --> INFO --> WARN --> ERROR
+
+	java.util.logging
+	commons-logging
+	log4j
+	logback
 
 
+	dependency
+		log4j - version 1
+		log4j2 - version 2
+	
+	=====================
+Spring framework:-
+	1. adding an dependecies
+	2. dependency version incopaitability
+	3. need to configure server
+	4. writing an configuration
+		web.xml or java bases web initializer
+		.xml Or Java bean config
+		Component-scan basepackage
+	5. define the hibernate xml file persistence
+	6. Binding the data or view resolver config
+	7. @EnambleWebMvc
+	   @EnableAspectJProxy
+
+Spring boot:-
+	Spring Boot - Java production grade application 		      enterprise application 
+		      Opinionated
+		      auto configuration
+	How do u create an spring boot application
+		1. spring initilizer.io
+		2. Through IDE  	
+	
+	Create stand-alone Spring applications
+	Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR 	files)
+	Provide opinionated 'starter' dependencies to simplify your build 	configuration
+	Automatically configure Spring and 3rd party libraries whenever 	possible
+	Provide production-ready features such as metrics, health checks, 	and externalized configuration
+	Absolutely no code generation and no requirement for XML 	configuration
 
 
+	Represent State - state - Resource
+		Resource - Product - productId
+			  productName
+			  productCost
+		Rest API state information can be access via URI
+		URI - uri path /product-api/v1/products/id
+	http://localhost:9090/product-api/v1
+
+get one		GET http://localhost:9090/product-api/v1/products/{id}
+get all		GET http://localhost:9090/product-api/v1/products
+create resource	POST http://localhost:9090/product-api/v1/products
+update resource	PUT http://localhost:9090/product-api/v1/products
+delete resource	DELETE http://localhost:9090/product-api/v1/products/id
+
+GET http://localhost:9090/product-api/v1/products/{id}
+
+GET http://localhost:9090/product-api/v1/products/356
+GET http://localhost:9090/product-api/v1/products/700
+GET http://localhost:9090/product-api/v1/products/456
 
 
+	Jakarta Bean Validation ->(specification bean validated)
+		|extends and implements interface and abstract class
+		|jakarata bean validation
+	Hibernate Validator (implemenation jakarata-bean validation)
 
-
-
-
-
-
-
-
-
-
+	Jakarta	Bean validation - 
+		@NotNull
+		@Null
+		@NotEmpty
+		@NotBlank
+		@Size
+		@Min
+		@Max
+		@Present
+		@Past
+		@Email
+	
 
 
 
