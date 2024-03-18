@@ -6,6 +6,7 @@ import org.ideyalabs.pms.model.User;
 import org.ideyalabs.pms.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.management.relation.Role;
@@ -18,6 +19,8 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
     private ModelMapper modelMapper;
     @Override
     public UserDto createUser(UserDto userDto) {
@@ -25,6 +28,7 @@ public class UserServiceImpl implements UserService{
         List<Roles> roles = Arrays.stream(userDto.getRoles()
                 .split(","))
                 .map(w->new Roles(0,w)).collect(Collectors.toList());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setRoles(roles);
         System.out.println(user);
         return modelMapper.map(userRepository.save(user), UserDto.class);

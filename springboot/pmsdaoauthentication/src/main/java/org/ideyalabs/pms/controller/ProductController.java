@@ -30,15 +30,28 @@ public class ProductController {
     }
 
     @GetMapping(value = "/products/{id}")
+    //whether current request has jwt token in the header
+    // if the token is available need to extract the token
+    // token isvalid - expiration,tampering,secret key
+    // prepare a response and send it
     public ProductDto getProductById(@PathVariable("id") int productId){
         return productService.getProductById(productId);
     }
     @GetMapping(value = "/products")
     public List<ProductDto> getAllProducts(){
+
+        //whether current request has jwt token in the header
+        // if the token is available need to extract the token
+        // token isvalid - expiration,tampering,secret key
+        // prepare a response and send it
         return productService.getAllProducts();
     }
     @PostMapping(value = "/products",consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto productDto){
+        //whether current request has jwt token in the header
+        // if the token is available need to extract the token
+        // token isvalid - expiration,tampering,secret key
+        // prepare a response and send it
         return new ResponseEntity<ProductDto>(productService.createProduct(productDto), HttpStatus.CREATED) ;
     }
     @GetMapping(value = "/products/name/{productName}")
