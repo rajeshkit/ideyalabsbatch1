@@ -34,9 +34,9 @@ public class AppSecurityConfig {
     httpSecurity.authorizeHttpRequests(authRequest ->{
         authRequest
                 .requestMatchers("/user-api/v1/users","/user-api/v1/users/login").permitAll()
-                .requestMatchers(HttpMethod.POST,"/product-api/v1/**").hasAnyRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE,"/product-api/v1/**").hasAnyRole("ADMIN")
-                .requestMatchers("/user-api/v1/**").hasAnyRole("ADMIN","CUSTOMER")
+                .requestMatchers(HttpMethod.POST,"/product-api/v1/**").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.DELETE,"/product-api/v1/**").hasAnyAuthority("ADMIN")
+                .requestMatchers("/user-api/v1/**").hasAnyAuthority("ADMIN","CUSTOMER")
                 .anyRequest().authenticated();
     }).sessionManagement(Customizer.withDefaults())
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
